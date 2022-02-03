@@ -1,0 +1,24 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 230);
+  background-color: rgb(10, 10, 30);
+}
+
+body {
+  overflow: hidden;
+}
+
+.floating-content {
+  padding-top: 72vh;
+  padding-left: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+.text-content {
+  font-size: 0.7rem;
+  column-width: 200px;
+  width: 90vw;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <script src="app.js"></script>
+    <script src="../lib/anchorClass.js"></script>
+    <link rel="stylesheet" href="../lib/style/style.css" />
+    <title>ver 1.0.3</title>
+  </head>
+  <body>
+    <div class="floating-content">
+      <h1>ver 1.0.3</h1>
+      <p class="text-content">
+        function setup() { num = 20; createCanvas((w = windowWidth), (h =
+        windowHeight)); stroke(255, 255, 230); strokeWeight(20); pi = Math.PI; p
+        = []; resetPosition(); init = p; angle = pi / 4; delta = 0; i = 0;
+        offset = 30; } function draw() { background(2, 63, 51); noFill(); delta
+        += 0.01; angle += (pi / 100) * noise(delta); for (i = 0; i &gt; num;
+        i++) { next = (i + 1) % num; p[i].updateAngle(p[i].angle + (pi / 100) *
+        noise(delta)); } // draw Udon for (i = 0; i &gt; num - 1; i++) { next =
+        (i + 1) % num; bezier( p[i].position[0], p[i].position[1],
+        p[i].oppositeHandle[0], p[i].oppositeHandle[1], p[next].handle[0],
+        p[next].handle[1], p[next].position[0], p[next].position[1] ); } } const
+        resetPosition = () => { for (i = 0; i &gt; num; i++) { position = [w *
+        (random() - 0.5) + w / 2, h * (random() - 0.5) + h / 2]; p[i] = new
+        Anchor(position, 300, pi * 2 * random()); } init = p; };
+      </p>
+    </div>
+  </body>
+</html>
